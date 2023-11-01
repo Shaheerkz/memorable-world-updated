@@ -1,0 +1,140 @@
+@media (max-width: 1600px) {
+  .container-c {
+    max-width: 935px;
+}
+#canvas{
+  top: 90px;
+}
+  .frame-head {
+    font-size: var(--text-2);
+  }
+  .head-bottom {
+    font-size: var(--text-md);
+  }
+  .poets-heading {
+    font-size: var(--text-head);
+  }
+  .book-wrapper img {
+    max-width: 80px;
+  }
+  .home-banner {
+    padding: 9.5rem 0 13.9rem 0;
+  }
+  .frame-text.frame-bottom-space {
+    margin-bottom: 3rem;
+  }
+  .top-window img {
+    animation: book 1s ease-in forwards;
+    min-height: 22rem;
+    object-fit: cover;
+    object-position: center;
+  }
+  .window-center-bottom img{
+    min-height: 32rem;
+    object-fit: cover;
+    object-position: center;
+  }
+  .windows-left{
+    margin: 6rem 0 0rem 0;
+  }
+}
+
+@media (max-width: 1280px) {
+  .primary-navs .nav-bars a,
+  .drop-down-text {
+    font-size: 1.3rem;
+  }
+  .window-bottom img {
+    min-height: 44rem;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+}
+@media (max-width: 991px) {
+  .frame-text {
+    width: 50%;
+  }
+  .home-banner {
+    padding: 166px 0 170px 0;
+  }
+  .main-shelf {
+    width: 50% !important;
+  }
+  .head-sec .btn-side {
+    gap: 2rem;
+  }
+  .head-sec .rounded-pill {
+    margin-left: 2rem;
+  }
+  .btn-side .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    font-size: 50%;
+  }
+  .frame-text {
+    width: 100%;
+  }
+  .bottom-circle {
+    left: 6.5px;
+  }
+  .close-icon i,
+  .menu-icon i {
+    display: block;
+    z-index: 2;
+    background: #cecece;
+    padding: 5px;
+    color: #fff;
+    position: absolute;
+    top: 63px;
+    right: 10px;
+  }
+  .close-icon i {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .primary-navs {
+    transform: translate(-100%);
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all ease-in-out 1s;
+  }
+  .primary-navs.active {
+    transform: translate(0);
+    background-color: #fff;
+    width: 50%;
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  }
+  .btn-side a {
+    width: 100%;
+  }
+  .main-shelf {
+    width: 100% !important;
+  }
+  .primary-navs .nav-bars a,
+  .drop-down-text {
+    font-size: var(--text-1);
+  }
+  .primary-navs .nav-bars a::after {
+    display: none;
+  }
+  .logo img {
+    max-width: 100px;
+  }
+}

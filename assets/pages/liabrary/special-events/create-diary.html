@@ -1,0 +1,97 @@
+<div class=" create-diary left-side-filter-content position-relative " id="filter-page">
+    <!-- <div class="">
+      <button class="close-btn filer-close-btn"><i class="fa-solid fa-xmark " id=""></i></button>
+    </div> -->
+    <div class="filter-content-wrapper">
+        <h1 class="filter-heading">Create a Diary</h1>
+        <form action="#" class="form">
+            <label for="text" class="label-field">Days:</label>
+            <input type="text" class="input-field" placeholder="others" />
+            <div class="radios d-flex flex-wrap gap-30">
+                <div class="first">
+                    <input type="radio"  name="days" value="30">
+                    <label for="age1">Single Day</label>
+                </div>
+                <div class="second">
+                    <input type="radio"  name="days" value="30">
+                    <label for="age1">Multiple Days</label>
+                </div>
+            </div>
+            <label for="text" class="label-field">Date:</label>
+            <input type="date" class="input-field">
+            <input
+            type="text"
+            class="input-field"
+            placeholder="Single"
+          />
+          <input
+          type="text"
+          class="input-field"
+          placeholder="Testing"
+        />
+        <div class="form-group">
+            <label for="" class="label-field">Create Link in Couple Diary</label>
+            <div class="file-upload input-field">
+              <button class="btn-upload w-100">
+                <!-- <i class="fa fa-camera i-pic-static"></i> -->
+              </button>
+              <i class="fa fa-camera i-pic-upload"></i>
+              <!-- <i class="fa fa-camera"></i> -->
+              <i class="i-deselect"></i>
+              <input type="file" class="form-control d-none" id="s-pic" />
+            </div>
+          </div>
+        </form>
+        <div class="filter-form-buttons">
+            <button class="ck-btn">Submit Now</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    /*---==>Custom FIle Upload--==>*/
+      $(".file-upload").each(function() {
+  
+  var fI  = $(this).children('input'), 
+      btn = $(this).children('.btn-upload'), 
+      i1  = $(this).children('.i-pic-upload'),
+    i2  = $(this).children('.i-deselect'), 
+    dN  = "No file Selected", 
+    tfN = $(this).find('.text-file-name'), 
+    bT  = $(this).find('.text-browse');
+    bT.text('Browse...');
+    tfN.text('No file Selected');
+  
+    btn.click(function(b) {
+       b.preventDefault(); 
+       fI.click();
+    });
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+          reader.onload = function(e) {
+          i1.css("background", "url("+e.target.result+") no-repeat center").removeClass('fa fa-camera');
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  fI.change(function(e) {
+    readURL(this); 
+    var fN = e.target.files[0].name; 
+    tfN.text(fN); 
+    i2.fadeIn(200); 
+    bT.text('Change...');
+  });
+  i2.click(function() {
+    i2.fadeOut(100);
+    window.setTimeout(function() {
+      i1.addClass('fa fa-camera');
+      bT.text('Browse...');
+      tfN.text('No file Selected');
+      fI.val(null);
+    }, 200);
+  
+  });
+  });
+  </script>

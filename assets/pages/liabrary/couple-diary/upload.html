@@ -1,0 +1,64 @@
+<div class="left-side-filter-content position-relative h-100 p-100">
+  <h1 class="text-center">Upload from </h1>
+  <div class="form-group">
+    <label for="" class="label-field">Upload:</label>
+    <div class="file-upload input-field">
+      <button class="btn-upload w-100">
+        <!-- <i class="fa fa-camera i-pic-static"></i> -->
+      </button>
+      <i class="fa fa-camera i-pic-upload"></i>
+      <!-- <i class="fa fa-camera"></i> -->
+      <i class="i-deselect"></i>
+      <input type="file" class="form-control d-none" id="s-pic" />
+    </div>
+    <div class="button">
+      <button class="submit rounded-pill w-100">Submit</button>
+    </div>
+  </div>
+</div>
+<script>
+  /*---==>Custom FIle Upload--==>*/
+	$(".file-upload").each(function() {
+
+var fI  = $(this).children('input'), 
+    btn = $(this).children('.btn-upload'), 
+    i1  = $(this).children('.i-pic-upload'),
+  i2  = $(this).children('.i-deselect'), 
+  dN  = "No file Selected", 
+  tfN = $(this).find('.text-file-name'), 
+  bT  = $(this).find('.text-browse');
+  bT.text('Browse...');
+  tfN.text('No file Selected');
+
+  btn.click(function(b) {
+     b.preventDefault(); 
+     fI.click();
+  });
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+        reader.onload = function(e) {
+        i1.css("background", "url("+e.target.result+") no-repeat center").removeClass('fa fa-camera');
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+fI.change(function(e) {
+  readURL(this); 
+  var fN = e.target.files[0].name; 
+  tfN.text(fN); 
+  i2.fadeIn(200); 
+  bT.text('Change...');
+});
+i2.click(function() {
+  i2.fadeOut(100);
+  window.setTimeout(function() {
+    i1.addClass('fa fa-camera');
+    bT.text('Browse...');
+    tfN.text('No file Selected');
+    fI.val(null);
+  }, 200);
+
+});
+});
+</script>

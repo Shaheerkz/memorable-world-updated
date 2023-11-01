@@ -1,0 +1,54 @@
+<div class="left-side-filter-content position-relative h-100" id="filter-page">
+    <div class="filter-content-wrapper">
+      <h1 class="filter-heading">Create a Diary</h1>
+      <div class="form">
+        <label for="text" class="label-field">Couple Name:</label>
+        <input
+          type="text"
+          class="input-field"
+          placeholder="Enter Your Name"
+        />
+        <label for="text" class="label-field">Couple Email:</label>
+        <input
+          type="email"
+          class="input-field"
+          placeholder="Enter Your Email Address"
+        />
+        <div class="d-flex flex-column position-relative">
+            <label for="text" class="label-field">Couple Password:</label>
+        <input
+          type="password"
+          class="input-field pass-field"
+          placeholder="****************"
+        />
+        <div class="eye-icon">
+            <i class="fa-solid fa-eye show-pass"></i>
+        </div>
+        </div>
+      </div>
+      <div class="filter-form-buttons">
+        <a href="javascript:void(0)" class="btn form-button w-100">Submit</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    // show-passowrd
+    const passFields = document.querySelectorAll('.pass-field')
+    const passBtn = document.querySelectorAll('.show-pass')
+    console.log(passBtn);
+    console.log(passBtn);
+    passBtn.forEach((btn, index) => {
+        btn.addEventListener('click', function (e) {
+            // alert('hellow')
+            e.preventDefault();
+            if (passFields[index].type === 'password') {
+                passFields[index].type = 'text'
+                btn.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                passFields[index].type = 'password'
+                btn.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        })
+    })
+
+</script>
